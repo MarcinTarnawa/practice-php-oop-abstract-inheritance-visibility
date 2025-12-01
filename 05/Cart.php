@@ -10,7 +10,7 @@ class Cart
         return $this->cart;
     }
 
-    public function removeFromCart($id)
+    public function removeProduct($id)
     {
        foreach ($this->cart as $key => $product) {
             if ($key === $id) {
@@ -20,7 +20,7 @@ class Cart
         }
     }
 
-    public function getCartProducts()
+    public function getProducts()
     {
         return $this->cart;
     }

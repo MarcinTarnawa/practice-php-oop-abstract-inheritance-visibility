@@ -25,10 +25,10 @@ $cart = new Cart();
 $cart->addProduct($pizza);
 $cart->addProduct($pizza);
 $cart->addProduct($burger);
-$cart->removeFromCart(2);
+$cart->removeProduct(2);
 $cart->addProduct($sushi);
 
-$order = $cart->getCartProducts();
+$order = $cart->getProducts();
 echo "Zamówienie 1:<br>";
 $cart->viewProducts();
 
@@ -57,7 +57,7 @@ echo "Zamówienie 2:<br>";
 $cart2->viewProducts();
 echo '<br>';
 
-$order2 = $cart2->getCartProducts();
+$order2 = $cart2->getProducts();
 $prepare = new Prepare($order2);
 $status = $prepare->changeStatus();
 $status = $prepare->changeStatus();

@@ -5,7 +5,7 @@ interface IElement
     public function render();
 }
 
-class PElement implements IElement
+abstract class HTMLElement implements IElement
 {
     protected string $text;
 
@@ -13,37 +13,26 @@ class PElement implements IElement
     {
         $this->text = $text;
     }
+}
 
+class PElement extends HTMLElement
+{
     public function render(): string
     {
         return "<p> $this->text </p>";
     }
 }
 
-class AElement implements IElement
+class AElement extends HTMLElement
 {
-    protected string $text;
-
-     public function __construct($text)
-    {
-        $this->text = $text;
-    }
-
     public function render(): string
     {
         return "<a href='$this->text'>$this->text</a>";
     }
 }
 
-class DivElement implements IElement
+class DivElement extends HTMLElement
 {
-    protected string $text;
-
-    public function __construct($text)
-    {
-        $this->text = $text;
-    }
-
     public function render(): string
     {
         return "<div> $this->text </div>";
