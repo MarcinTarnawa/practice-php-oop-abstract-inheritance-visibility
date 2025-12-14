@@ -21,7 +21,7 @@ class MDformat extends TextFormat
 
     public function body()
     {
-        echo "## MD body\n";
+        echo "MD body\n";
     }
 }
 
